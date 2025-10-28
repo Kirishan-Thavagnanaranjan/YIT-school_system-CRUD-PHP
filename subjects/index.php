@@ -34,8 +34,8 @@ if(!$results){
 				<td><?php echo $subject['subject_order']; ?></td>
 				<td><?php echo $subject['subject_color']; ?></td>
 				<td><?php echo $subject['subject_number']; ?></td>
-				<td><button><a href="../public/edit.php?id=<?php echo $student['id']?>" >Edit </a></button>
-					<button><a href="../public/delete.php?id=<?php echo $student['id']?>" onclick ="return confirm('Are you sure !')">Delete </a></button>
+				<td><button><a href="edit.php?id=<?php echo $subject['id']?>" >Edit </a></button>
+					<button><a href="../public/delete.php?id=<?php echo $subject['id']?>" onclick ="return confirm('Are you sure !')">Delete </a></button>
 					</td>
 			</tr>
 		<?php } ?>

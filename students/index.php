@@ -42,7 +42,7 @@ if(!$results){
 				<td><?php echo $student['gender']; ?></td>
 				<td><?php echo $student['telephone_number']; ?></td>
 				<td><?php echo $student['address']; ?></td>
-				<td><button><a href="../public/edit.php?id=<?php echo $student['id']?>" >Edit </a></button>
+				<td><button><a href="../students/edit.php?id=<?php echo $student['id']?>" >Edit </a></button>
 					<button><a href="../public/delete.php?id=<?php echo $student['id']?>" onclick ="return confirm('Are you sure !')">Delete </a></button>
 					</td>
 			</tr>

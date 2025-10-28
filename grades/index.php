@@ -32,8 +32,8 @@ if(!$results){
 				<td><?php echo $grade['grade_group']; ?></td>
 				<td><?php echo $grade['grade_color']; ?></td>
 				<td><?php echo $grade['grade_order']; ?></td>
-				<td><button><a href="../public/edit.php?id=<?php echo $grade['id']?>" >Edit </a></button>
-					<button><a href="../public/delete.php?id=<?php echo $grade['id']?>" onclick ="return confirm('Are you sure !')">Delete </a></button>
+				<td><button><a href="edit.php?id=<?php echo $grade['id']?>" >Edit </a></button>
+					<button><a href="delete.php?id=<?php echo $grade['id']?>" onclick ="return confirm('Are you sure !')">Delete </a></button>
 					</td>
 			</tr>
 		<?php } ?>
