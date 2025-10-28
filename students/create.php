@@ -4,7 +4,7 @@
 <title>Add Student</title>
 </head>
 <body>
-<form action="store.php" method = "POST" autocomplete = "on">
+<form action="../students/store.php" method = "POST" autocomplete = "on">
 <table border="1" cellpadding = "10" cellspacing = "0">
 	<tr>
 		<th colspan = "2"> Student Registration </th> 

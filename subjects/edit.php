@@ -19,7 +19,8 @@
 	</tr>
 	<tr>
 		<td><label for="subject_name">Subject Name</label></td>
-		<td><input type="text" name="subject_name" id="subject_name" value = "<?php echo $row['subject_name'] ?>"></td>
+		<td><input type="text" name="subject_name" id="subject_name" value = "<?php echo $row['subject_name'] ?>">
+		<input type = "hidden" name="id" id="id" value="<?php echo $row['id'] ?>"></td>
 	</tr>
 	<tr>
 		<td><label for="subject_index">Student Index</label></td>

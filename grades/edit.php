@@ -19,7 +19,8 @@
 	</tr>
 	<tr>
 		<td><label for="grade_name">Grade Name</label></td>
-		<td><input type="text" name="grade_name" id="grade_name" value="<?php echo $row['grade_name'] ?>"></td>
+		<td><input type="text" name="grade_name" id="grade_name" value="<?php echo $row['grade_name'] ?>">
+			<input type = "hidden" name="id" id="id" value="<?php echo $row['id'] ?>"></td>
 	</tr>
 	<tr>
 		<td><label for="grade_group">Grade Group</label></td>

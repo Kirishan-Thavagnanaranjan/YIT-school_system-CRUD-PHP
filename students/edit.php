@@ -12,14 +12,15 @@
 	$result = mysqli_query($conn,$query);
 	$row = mysqli_fetch_array($result);
 ?>
-<form action="update.php" method = "POST" autocomplete = "on">
+<form action="../students/update.php" method = "POST" >
 <table border="1" cellpadding = "10" cellspacing = "0">
 	<tr>
 		<th colspan = "2"> Edit Student details  </th> 
 	</tr>
 	<tr>
 		<td><label for="father_name">Father Name</label></td>
-		<td><input type="text" name="father_name" id="father_name" value="<?php echo $row['father_name'] ?>"></td>
+		<td><input type="text" name="father_name" id="father_name" value="<?php echo $row['father_name'] ?>">
+			<input type = "hidden" name="id" id="id" value="<?php echo $row['id'] ?>"></td>
 	</tr>
 	<tr>
 		<td><label for="student_name">Student Name</label></td>
