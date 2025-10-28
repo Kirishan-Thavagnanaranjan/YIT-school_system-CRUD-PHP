@@ -1,5 +1,5 @@
 <?php
-require_once("../config.php");
+require_once(__DIR__ . "/../config.php");
 
 $query = "SELECT * FROM students ;";
 $results = mysqli_query($conn,$query);
@@ -12,6 +12,7 @@ if(!$results){
 <html>
 <head>
 <title>Students</title>
+<link rel="stylesheet" href="../style.css">
 </head>
 <body>
 <h2>Students</h2>
@@ -44,6 +45,7 @@ if(!$results){
 				<td><?php echo $student['address']; ?></td>
 				<td><button><a href="../students/edit.php?id=<?php echo $student['id']?>" >Edit </a></button>
 					<button><a href="delete.php?id=<?php echo $student['id']?>" onclick ="return confirm('Are you sure !')">Delete </a></button>
+					<button><a href="../students/show.php?id=<?php echo $student['id']?>" >Show </a></button>
 					</td>
 			</tr>
 		<?php } ?>

@@ -1,35 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>School System</title>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="assets\css\index.css">
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>School System</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+<!-- Header -->
 <header>
-  <h2>School System</h2>
+    <h1> School System</h1>
 </header>
 
-<section>
-  <nav>
-    <ul>
-      <li><a href="#">Students</a></li>
-      <li><a href="#">Subjects</a></li>
-      <li><a href="#">Grades</a></li>
-    </ul>
-  </nav>
-  
-  <article>
-    
-  </article>
-</section>
+<!-- Layout container -->
+<div class="container">
 
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <ul>
+            <li><a href="students/index.php" target="iframe_a"> Students</a></li>
+            <li><a href="subjects/index.php" target="iframe_a"> Subjects</a></li>
+            <li><a href="grades/index.php" target="iframe_a"> Grades</a></li>
+        </ul>
+    </aside>
+
+    <!-- Main content area -->
+    <main class="content">
+      <iframe src="students/index.php" name="iframe_a" height="500px" width="110%" title="Iframe Example"></iframe>  
+    </main>
+</div>
+
+<!-- Footer -->
 <footer>
-  <p>Footer</p>
+    <p>© <?php echo date('Y'); ?> School Management System | Designed by Kirishan</p>
 </footer>
 
 </body>
 </html>
-

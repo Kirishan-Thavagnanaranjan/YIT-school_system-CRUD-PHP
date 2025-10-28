@@ -12,6 +12,7 @@ if(!$results){
 <html>
 <head>
 <title>Subjects</title>
+<link rel="stylesheet" href="../style.css">
 </head>
 <body>
 <h2>Subjects</h2>
@@ -36,6 +37,7 @@ if(!$results){
 				<td><?php echo $subject['subject_number']; ?></td>
 				<td><button><a href="edit.php?id=<?php echo $subject['id']?>" >Edit </a></button>
 					<button><a href="delete.php?id=<?php echo $subject['id']?>" onclick ="return confirm('Are you sure !')">Delete </a></button>
+					<button><a href="show.php?id=<?php echo $subject['id']?>" >Show </a></button>
 					</td>
 			</tr>
 		<?php } ?>

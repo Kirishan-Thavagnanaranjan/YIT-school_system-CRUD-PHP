@@ -2,6 +2,7 @@
 <html>
 <head>
 <title>Add Grade</title>
+<link rel="stylesheet" href="../style.css">
 </head>
 <body>
 <form action="store.php" method = "POST" autocomplete = "on">
@@ -26,7 +27,7 @@
 		<td><input type="number" name="grade_order" id="grade_order" ></td>
 	</tr>
 </table> </br>
-<input type="reset" value="Reset"> <input type="submit" value="Add">
+<input type="reset" id="res" value="Reset"> <input type="submit" id="sub" value="Add">
 	
 
 </form>

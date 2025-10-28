@@ -1,10 +1,3 @@
-<DOCTYPE html>
-<html>
-<head>
-<title>Edit Subjects</title>
-<link rel="stylesheet" href="../style.css">
-</head>
-<body>
 <?php 
 	$id = $_GET['id'];
 	require_once("../config.php");
@@ -13,10 +6,18 @@
 	$result = mysqli_query($conn,$query);
 	$row = mysqli_fetch_array($result);
 ?>
-<form action="update.php" method = "POST" autocomplete = "on">
+<DOCTYPE html>
+<html>
+<head>
+<title><?php echo $row['subject_name']?>'s details </title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<form action="index.php" method = "POST" autocomplete = "on">
 <table border="1" cellpadding = "10" cellspacing = "0">
 	<tr>
-		<th colspan = "2"> Edit Subject details  </th> 
+		<th colspan = "2"> <?php echo $row['subject_name']?>'s details  </th> 
 	</tr>
 	<tr>
 		<td><label for="subject_name">Subject Name</label></td>
@@ -40,7 +41,7 @@
 		<td><input type="number" name="subject_number" id="subject_number" value = "<?php echo $row['subject_number'] ?>"></td>
 	</tr>
 </table> </br>
-<input type="reset" value="Reset"> <input type="submit" value="Save">
+<a href = "index.php"><button type="button">Back</button></a>
 	
 
 </form>

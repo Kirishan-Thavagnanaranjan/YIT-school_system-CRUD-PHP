@@ -2,6 +2,7 @@
 <html>
 <head>
 <title>Add Student</title>
+<link rel="stylesheet" href="../style.css">
 </head>
 <body>
 <form action="../students/store.php" method = "POST" autocomplete = "on">
@@ -46,7 +47,7 @@
 		<td><input type="text" name="address" id="address" placeholder = "Enter the address.."></td>
 	</tr>
 </table> </br>
-<input type="reset" value="Reset"> <input type="submit" value="Add">
+<input type="reset" value="Reset" id="res"> <input type="submit" value="Add" id="sub">
 	
 
 </form>

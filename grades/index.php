@@ -12,6 +12,7 @@ if(!$results){
 <html>
 <head>
 <title>Grades</title>
+<link rel="stylesheet" href="../style.css">
 </head>
 <body>
 <h2>Grades</h2>
@@ -34,11 +35,12 @@ if(!$results){
 				<td><?php echo $grade['grade_order']; ?></td>
 				<td><button><a href="edit.php?id=<?php echo $grade['id']?>" >Edit </a></button>
 					<button><a href="delete.php?id=<?php echo $grade['id']?>" onclick ="return confirm('Are you sure !')">Delete </a></button>
+					<button><a href="show.php?id=<?php echo $grade['id']?>" >Show </a></button>
 					</td>
 			</tr>
 		<?php } ?>
 	</table></br>
-	<button><a href="create.php">Add Grade</a></button>
+	<button id="sub"><a href="create.php">Add Grade</a></button>
 </body>
 </html>
 

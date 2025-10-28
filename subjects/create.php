@@ -2,6 +2,7 @@
 <html>
 <head>
 <title>Add Subject</title>
+<link rel="stylesheet" href="../style.css">
 </head>
 <body>
 <form action="store.php" method = "POST" autocomplete = "on">
@@ -30,7 +31,7 @@
 		<td><input type="number" name="subject_number" id="subject_number" placeholder = "Enter the subject number.."></td>
 	</tr>
 </table> </br>
-<input type="reset" value="Reset"> <input type="submit" value="Add">
+<input type="reset" value="Reset" id="res"> <input type="submit" value="Add" id="sub">
 	
 
 </form>
