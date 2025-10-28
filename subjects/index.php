@@ -1,0 +1,46 @@
+<?php
+require_once("../config.php");
+
+$query = "SELECT * FROM subjects ;";
+$results = mysqli_query($conn,$query);
+if(!$results){
+	echo mysqli_error($conn);
+}
+?>
+
+<DOCTYPE html>
+<html>
+<head>
+<title>Subjects</title>
+</head>
+<body>
+<h2>Subjects</h2>
+	<table border="1" cellpadding = "10" cellspacing = "0">
+			<tr>
+				<td>Id</td>
+				<td>Subject Name</td>
+				<td>Subject Index</td>
+				<td>Subject order </td>
+				<td>Subject Color</td>
+				<td>Subject Number</td>
+				<td>Actions</td>
+			</tr>
+		<?php foreach($results as $subject){ 
+				//while($row = mysqli_fetch_assoc($results) ?>
+			<tr>
+				<td><?php echo $subject['id']; ?></td>
+				<td><?php echo $subject['subject_name']; ?></td>
+				<td><?php echo $subject['subject_index']; ?></td>
+				<td><?php echo $subject['subject_order']; ?></td>
+				<td><?php echo $subject['subject_color']; ?></td>
+				<td><?php echo $subject['subject_number']; ?></td>
+				<td><button><a href="../public/edit.php?id=<?php echo $student['id']?>" >Edit </a></button>
+					<button><a href="../public/delete.php?id=<?php echo $student['id']?>" onclick ="return confirm('Are you sure !')">Delete </a></button>
+					</td>
+			</tr>
+		<?php } ?>
+	</table></br>
+	<button><a href="create.php">Add Subject</a></button>
+</body>
+</html>
+
