@@ -50,7 +50,7 @@ if(!$results){
 			</tr>
 		<?php } ?>
 	</table></br>
-	<button><a href="create.php">Add Student</a></button>
+	<button id="add"><a href="create.php">Add Student</a></button>
 </body>
 </html>
 

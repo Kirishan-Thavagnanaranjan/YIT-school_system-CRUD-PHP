@@ -110,30 +110,131 @@ footer {
     }
 }
 
-#sub{
-    background-color: rgb(38, 118, 38);
-  border: none;
+/* ====== Global Styles ====== */
+body {
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(135deg, #74b9ff, #a29bfe);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+/* ====== Form Container ====== */
+form {
+  background: #fff;
+  padding: 30px 40px;
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  width: 450px;
+  transition: all 0.3s ease;
+}
+
+form:hover {
+  transform: translateY(-3px);
+}
+
+/* ====== Table Styles ====== */
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th {
+  font-size: 1.5em;
+  text-align: center;
+  background-color: #0984e3;
   color: white;
-  padding: 10px 22px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  cursor: pointer;
+  padding: 15px 0;
+  border-radius: 10px 10px 0 0;
 }
 
-#res{
-    background-color: rgb(255, 255, 255);
+td {
+  padding: 10px;
   border: none;
-  color: rgb(0, 0, 0);
-  padding: 10px 22px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  cursor: pointer;
 }
 
-a{
-    text-decoration: none;
+/* ====== Labels and Inputs ====== */
+label {
+  font-weight: 600;
+  color: #2d3436;
+  display: inline-block;
+  width: 130px;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="tel"],
+input[type="date"],
+input[type="email"],
+textarea {
+  width: 100%;  
+  padding: 10px;
+  border: 1px solid #dfe6e9;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  font-size: 0.95em;
+  transition: border-color 0.2s, background 0.2s;
+}
+
+input:focus,
+textarea:focus {
+  border-color: #0984e3;
+  background-color: #fff;
+  outline: none;
+}
+
+/* ====== Radio Buttons ====== */
+input[type="radio"] {
+  margin: 0 6px;
+  accent-color: #0984e3;
+}
+
+/* ====== Buttons ====== */
+#res, #sub {
+  background-color: #0984e3;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  font-size: 1em;
+  font-weight: 600;
+  margin: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+#res {
+  background-color: #636e72;
+}
+
+#res:hover {
+  background-color: #2d3436;
+}
+
+#sub:hover {
+  background-color: #74b9ff;
+}
+
+/* ====== Responsive Design ====== */
+@media (max-width: 600px) {
+  form {
+    width: 90%;
+    padding: 20px;
+  }
+
+  label {
+    display: block;
+    margin-bottom: 5px;
+  }
+
+  table {
+    display: block;
+  }
+
+  td {
+    display: block;
+    width: 100%;
+  }
 }

@@ -42,7 +42,7 @@ if(!$results){
 			</tr>
 		<?php } ?>
 	</table></br>
-	<button><a href="create.php">Add Subject</a></button>
+	<button id="add"><a href="create.php">Add Subject</a></button>
 </body>
 </html>
 

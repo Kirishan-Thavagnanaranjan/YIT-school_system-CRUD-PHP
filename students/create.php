@@ -3,6 +3,9 @@
 <head>
 <title>Add Student</title>
 <link rel="stylesheet" href="../style.css">
+<style>
+
+</style>
 </head>
 <body>
 <form action="../students/store.php" method = "POST" autocomplete = "on">

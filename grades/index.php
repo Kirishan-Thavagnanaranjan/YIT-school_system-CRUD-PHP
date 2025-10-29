@@ -40,7 +40,7 @@ if(!$results){
 			</tr>
 		<?php } ?>
 	</table></br>
-	<button id="sub"><a href="create.php">Add Grade</a></button>
+	<button ><a href="create.php" id="add">Add Grade</a></button>
 </body>
 </html>
 
