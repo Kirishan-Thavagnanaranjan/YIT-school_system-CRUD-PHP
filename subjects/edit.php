@@ -24,7 +24,7 @@
 		<input type = "hidden" name="id" id="id" value="<?php echo $row['id'] ?>"></td>
 	</tr>
 	<tr>
-		<td><label for="subject_index">Student Index</label></td>
+		<td><label for="subject_index">Subject Index</label></td>
 		<td><input type="text" name="subject_index" id="subject_index" value = "<?php echo $row['subject_index'] ?>"></td>
 	</tr>
 	<tr>

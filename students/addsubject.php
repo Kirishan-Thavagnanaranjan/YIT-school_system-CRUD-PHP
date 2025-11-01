@@ -5,6 +5,9 @@ require_once("../config.php");
 $query = "SELECT * FROM students WHERE id = '$id' ;";
 $result = mysqli_query($conn, $query);
 $row = mysqli_fetch_array($result);
+
+$query2 = "SELECT subject_name,id FROM subjects;";
+$result2 = mysqli_query($conn, $query2);
 ?>
 <DOCTYPE html>
     <html>
@@ -37,24 +40,26 @@ $row = mysqli_fetch_array($result);
                 </tr>
                 <tr>
                     <td><label for="grade_id">Grade</label></td>
-                    <td><input type="text" name="grade_id" id="grade_id" 
-                    value="<?php $query1 = "SELECT grade_name from grade where id = {$row['grade_id']};";
-					$result1 = mysqli_query($conn,$query1);
-					$row1 = mysqli_fetch_assoc($result1);
-					echo $row1['grade_name']; ?>"></td>
+                    <td><input type="text" name="grade_id" id="grade_id"
+                            value="<?php $query1 = "SELECT grade_name from grade where id = {$row['grade_id']};";
+                                    $result1 = mysqli_query($conn, $query1);
+                                    $row1 = mysqli_fetch_assoc($result1);
+                                    echo $row1['grade_name']; ?>"></td>
                 </tr>
                 <tr>
                     <td><label for="grade_id">Subjects</label></td>
-                    <td><input type="checkbox" name="subject1" id="subject1" value="Maths">Maths</br>
-                    <input type="checkbox" name="subject1" id="subject1" value="Science">Science</br>
-                    <input type="checkbox" name="subject1" id="subject1" value="ICT">ICT</br>
-                    <input type="checkbox" name="subject1" id="subject1" value="History">History
+                    <td>
+                        <?php while ($row2 = mysqli_fetch_assoc($result2)) { ?>
+                            
+                            <input type="checkbox" name="subject_id" id="subject_id" value="<?php echo $row2['id']; ?>"><?php echo $row2['subject_name']; ?></br>
+                        <?php } ?>
 
                     </td>
                 </tr>
 
             </table> </br>
-            <a href="index.php"> <button type="button"> Back </button> </a>
+            <a href="index.php"> <button type="button"> Back </button> </a></t>
+             <input type="submit" value="Save">
 
 
         </form>
