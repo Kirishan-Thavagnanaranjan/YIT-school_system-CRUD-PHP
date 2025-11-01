@@ -1,5 +1,6 @@
 <?php
 require_once("../config.php");
+require_once("../auth/usercheck.php");
 
 $query = "SELECT * FROM subjects ;";
 $results = mysqli_query($conn,$query);
@@ -12,9 +13,10 @@ if(!$results){
 <html>
 <head>
 <title>Subjects</title>
-<link rel="stylesheet" href="../style.css">
+<!-- <link rel="stylesheet" href="../style.css"> -->
 </head>
 <body>
+	
 <h2>Subjects</h2>
 	<table border="1" cellpadding = "10" cellspacing = "0">
 			<tr>

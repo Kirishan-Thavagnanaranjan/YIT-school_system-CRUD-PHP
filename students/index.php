@@ -1,18 +1,20 @@
 <?php
 require_once(__DIR__ . "/../config.php");
+require_once("../auth/usercheck.php");
 
 $query = "SELECT * FROM students ;";
 $results = mysqli_query($conn,$query);
 if(!$results){
 	echo mysqli_error($conn);
 }
+
 ?>
 
 <DOCTYPE html>
 <html>
 <head>
 <title>Students</title>
-<link rel="stylesheet" href="../style.css">
+<!-- <link rel="stylesheet" href="../style.css"> -->
 </head>
 <body>
 <h2>Students</h2>
@@ -22,7 +24,7 @@ if(!$results){
 				<td>First Name</td>
 				<td>Last Name</td>
 				<td>Addmission NO </td>
-				<td>Grade_Id</td>
+				<td>Grade</td>
 				<td>NIC</td>
 				<td>DOB</td>
 				<td>Gender</td>
@@ -46,6 +48,7 @@ if(!$results){
 				<td><button><a href="../students/edit.php?id=<?php echo $student['id']?>" >Edit </a></button>
 					<button><a href="delete.php?id=<?php echo $student['id']?>" onclick ="return confirm('Are you sure !')">Delete </a></button>
 					<button><a href="../students/show.php?id=<?php echo $student['id']?>" >Show </a></button>
+					<button><a href="../students/addsubject.php?id=<?php echo $student['id']?>" >Add Subject </a></button>
 					</td>
 			</tr>
 		<?php } ?>

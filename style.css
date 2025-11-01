@@ -3,7 +3,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Poppins", "sans-serif";
+    font-family: "Poppins", sans-serif;
 }
 
 /* Header */
@@ -11,8 +11,8 @@ header {
     background-color: #4a90e2;
     color: white;
     text-align: center;
-    padding: 10px 0;
-    font-size: 25px;
+    padding: 20px 0;
+    font-size: 28px;
     letter-spacing: 1px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
 }
@@ -65,13 +65,18 @@ header {
     background-color: #f7f8fa;
     padding: 40px;
     overflow-y: auto;
-    overflow-x: auto;
-}
-iframe{
-    border: none;
 }
 
+.content h2 {
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
 
+.content p {
+    font-size: 16px;
+    color: #555;
+}
 
 /* Footer */
 footer {
@@ -110,8 +115,9 @@ footer {
     }
 }
 
+
 /* ====== Global Styles ====== */
-body {
+/* body {
   font-family: "Poppins", sans-serif;
   background: linear-gradient(135deg, #74b9ff, #a29bfe);
   display: flex;
@@ -119,10 +125,10 @@ body {
   align-items: center;
   height: 100vh;
   margin: 0;
-}
+} */
 
 /* ====== Form Container ====== */
-form {
+/* form {
   background: #fff;
   padding: 30px 40px;
   border-radius: 15px;
@@ -136,7 +142,7 @@ form:hover {
 }
 
 /* ====== Table Styles ====== */
-table {
+/* table {
   width: 100%;
   border-collapse: collapse;
 }
@@ -153,10 +159,10 @@ th {
 td {
   padding: 10px;
   border: none;
-}
+} */
 
 /* ====== Labels and Inputs ====== */
-label {
+/* label {
   font-weight: 600;
   color: #2d3436;
   display: inline-block;
@@ -183,16 +189,16 @@ textarea:focus {
   border-color: #0984e3;
   background-color: #fff;
   outline: none;
-}
+} */
 
 /* ====== Radio Buttons ====== */
-input[type="radio"] {
+/* input[type="radio"] {
   margin: 0 6px;
-  accent-color: #0984e3;
-}
+  accent-color: #0984e3; 
+}*/
 
 /* ====== Buttons ====== */
-#res, #sub {
+/* #res, #sub {
   background-color: #0984e3;
   color: #fff;
   border: none;
@@ -215,10 +221,10 @@ input[type="radio"] {
 
 #sub:hover {
   background-color: #74b9ff;
-}
+} */
 
 /* ====== Responsive Design ====== */
-@media (max-width: 600px) {
+/* @media (max-width: 600px) {
   form {
     width: 90%;
     padding: 20px;
@@ -237,4 +243,4 @@ input[type="radio"] {
     display: block;
     width: 100%;
   }
-}
+}  */

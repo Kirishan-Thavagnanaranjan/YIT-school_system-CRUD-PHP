@@ -1,6 +1,7 @@
 <?php
 require_once("../config.php");
 
+
 $query = "SELECT * FROM grade ;";
 $results = mysqli_query($conn,$query);
 if(!$results){
@@ -12,9 +13,12 @@ if(!$results){
 <html>
 <head>
 <title>Grades</title>
-<link rel="stylesheet" href="../style.css">
+<!-- <link rel="stylesheet" href="../style.css"> -->
 </head>
 <body>
+	<?php
+	require_once("../auth/usercheck.php");
+	?>
 <h2>Grades</h2>
 	<table border="1" cellpadding = "10" cellspacing = "0">
 			<tr>
