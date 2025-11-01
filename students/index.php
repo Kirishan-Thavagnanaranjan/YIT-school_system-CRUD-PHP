@@ -39,7 +39,12 @@ if(!$results){
 				<td><?php echo $student['father_name']; ?></td>
 				<td><?php echo $student['student_name']; ?></td>
 				<td><?php echo $student['admission_number']; ?></td>
-				<td><?php echo $student['grade_id']; ?></td>
+				<td><?php 
+					$query1 = "SELECT grade_name from grade where id = {$student['grade_id']};";
+					$result1 = mysqli_query($conn,$query1);
+					$row1 = mysqli_fetch_assoc($result1);
+					echo $row1['grade_name'];
+					?></td>
 				<td><?php echo $student['nic']; ?></td>
 				<td><?php echo $student['dob']; ?></td>
 				<td><?php echo $student['gender']; ?></td>
