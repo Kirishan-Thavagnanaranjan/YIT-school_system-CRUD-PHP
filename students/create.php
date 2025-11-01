@@ -1,4 +1,4 @@
-<DOCTYPE html>
+<!DOCTYPE html>
 	<html>
 
 	<head>
@@ -18,7 +18,7 @@
 			echo mysqli_error($conn);
 		}
 		?>
-		
+
 		<form action="../students/store.php" method="POST" autocomplete="on">
 			<table border="1" cellpadding="10" cellspacing="0">
 				<tr>
@@ -39,10 +39,11 @@
 				<tr>
 					<td><label for="grade_id">Grade</label></td>
 					<td>
-						<select name="grade_name"></select>
+						<select name="grade_id" id="grade_id">
+							<option value="">-- Select Grade --</option>
 						<?php while ($row = mysqli_fetch_assoc($results)) { ?>
 
-							<option value="<?php $row['id'] ?>"><?php $row['grade_name'] ?></option>
+							<option value="<?php echo $row['id']; ?>"><?php echo $row['grade_name']; ?></option>
 
 
 						<?php } ?>
