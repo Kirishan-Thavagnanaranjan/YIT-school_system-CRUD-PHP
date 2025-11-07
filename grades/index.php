@@ -40,6 +40,7 @@ if(!$results){
 				<td><button><a href="edit.php?id=<?php echo $grade['id']?>" >Edit </a></button>
 					<button><a href="delete.php?id=<?php echo $grade['id']?>" onclick ="return confirm('Are you sure !')">Delete </a></button>
 					<button><a href="show.php?id=<?php echo $grade['id']?>" >Show </a></button>
+					<button><a href="../grades/addsubject.php?id=<?php echo $grade['id']?>" >Add Subject </a></button>
 					</td>
 			</tr>
 		<?php } ?>
