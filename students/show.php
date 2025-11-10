@@ -11,10 +11,23 @@
 <head>
 <title><?php echo $row['student_name']?>'s details</title>
 <link rel="stylesheet" href="../style.css">
+<style>
+	img{
+		width: 150px;
+		border-radius: 50px;
+		display: flex;
+		margin-left: 10%;
+		margin-bottom: 30px;
+		margin-top: 20px;
+
+	}
+</style>
 </head>
 <body>
 
 <form action="index.php" method = "POST" >
+
+<img src="<?php echo $row['image'] ?>" alt="<?php echo $row['file_name'] ?>">
 <table border="1" cellpadding = "10" cellspacing = "0">
 	<tr>
 		<th colspan = "2">  <?php echo $row['student_name']?>'s details  </th> 

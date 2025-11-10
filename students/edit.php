@@ -4,6 +4,13 @@
 	<head>
 		<title>Edit Students</title>
 		<link rel="stylesheet" href="../style.css">
+		<style>
+			img {
+				vertical-align: middle;
+				width: 50px;
+
+			}
+		</style>
 	</head>
 
 	<body>
@@ -16,12 +23,16 @@
 		$row = mysqli_fetch_array($result);
 		$query1 = "SELECT * FROM grade;";
 		$result1 = mysqli_query($conn, $query1);
-		
+
 		?>
-		<form action="../students/update.php" method="POST">
+		<form action="../students/update.php" method="POST" enctype="multipart/form-data">
 			<table border="1" cellpadding="10" cellspacing="0">
 				<tr>
 					<th colspan="2"> Edit Student details </th>
+				</tr>
+				<tr>
+					<td><label for="myfile">Select student picture</label></td>
+					<td><img src="<?php echo $row['image']?>" alt="<?php echo $row['file_name']?>"><input type="file" name="myfile" id="myfile" accept="image/jpg"  ></td>
 				</tr>
 				<tr>
 					<td><label for="father_name">Father Name</label></td>
@@ -43,7 +54,9 @@
 						<select name="grade_id">
 							<?php while ($row1 = mysqli_fetch_assoc($result1)) { ?>
 
-								<option value="<?php echo $row1['id']; ?>" <?php if($row['grade_id'] == $row1['id']){echo "selected";} ?>><?php echo $row1['grade_name']; ?></option>
+								<option value="<?php echo $row1['id']; ?>" <?php if ($row['grade_id'] == $row1['id']) {
+																				echo "selected";
+																			} ?>><?php echo $row1['grade_name']; ?></option>
 
 
 							<?php } ?>
