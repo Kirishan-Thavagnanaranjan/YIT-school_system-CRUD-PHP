@@ -7,8 +7,14 @@
 		<style>
 			img {
 				vertical-align: middle;
-				width: 50px;
+				width: 140px;
+				margin: 20px;
+				margin-left: 15%;
 
+			}
+			body{
+				display: flex;
+				align-items: center;
 			}
 		</style>
 	</head>
@@ -26,14 +32,14 @@
 
 		?>
 		<form action="../students/update.php" method="POST" enctype="multipart/form-data">
+			<img src="<?php echo $row['image']?>" alt="<?php echo $row['file_name']?>"><br/>
+			<button ><a href="delete_image.php?id=<?php echo $row['id'] ?>">Delete Image</a></button>
+			<input type="file" name="myfile" id="myfile" accept="image/jpg"  >
 			<table border="1" cellpadding="10" cellspacing="0">
 				<tr>
 					<th colspan="2"> Edit Student details </th>
 				</tr>
-				<tr>
-					<td><label for="myfile">Select student picture</label></td>
-					<td><img src="<?php echo $row['image']?>" alt="<?php echo $row['file_name']?>"><input type="file" name="myfile" id="myfile" accept="image/jpg"  ></td>
-				</tr>
+				
 				<tr>
 					<td><label for="father_name">Father Name</label></td>
 					<td><input type="text" name="father_name" id="father_name" value="<?php echo $row['father_name'] ?>">
