@@ -5,7 +5,7 @@ require_once("../auth/usercheck.php");
 
 
 //fetch grade details	
-$query = "SELECT * FROM grade WHERE id = '$id' ;";
+$query = "SELECT * FROM grades WHERE id = '$id' ;";
 $result = mysqli_query($conn, $query);
 $row = mysqli_fetch_array($result);
 

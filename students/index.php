@@ -53,7 +53,7 @@ if (!$results) {
 					<td><?php echo $student['student_name']; ?></td>
 					<td><?php echo $student['admission_number']; ?></td>
 					<td><?php
-						$query1 = "SELECT grade_name from grade where id = {$student['grade_id']};";
+						$query1 = "SELECT grade_name from grades where id = {$student['grade_id']};";
 						$result1 = mysqli_query($conn, $query1);
 						$row1 = mysqli_fetch_assoc($result1);
 						echo $row1['grade_name'];

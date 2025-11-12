@@ -8,7 +8,7 @@ $result = mysqli_query($conn, $query);
 $row = mysqli_fetch_array($result);
 
 // Fetch grade name
-$query1 = "SELECT grade_name FROM grade WHERE id = {$row['grade_id']}";
+$query1 = "SELECT grade_name FROM grades WHERE id = {$row['grade_id']}";
 $result1 = mysqli_query($conn, $query1);
 $row1 = mysqli_fetch_assoc($result1);
 $grade_name = $row1['grade_name'];

@@ -12,7 +12,7 @@
 <body>
 	<?php
 	require_once("../config.php");
-	$query = "SELECT * FROM grade ;";
+	$query = "SELECT * FROM grades ;";
 	$results = mysqli_query($conn, $query);
 	if (!$results) {
 		echo mysqli_error($conn);
