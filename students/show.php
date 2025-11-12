@@ -48,7 +48,7 @@
 	<tr>
 		<td><label for="grade">Grade</label></td>
 		<td><input type="text" name="grade_id" id="grade_id" 
-		value="<?php $query1 = "SELECT grade_name from grade where id = {$row['grade_id']};";
+		value="<?php $query1 = "SELECT grade_name from grades where id = {$row['grade_id']};";
 					$result1 = mysqli_query($conn,$query1);
 					$row1 = mysqli_fetch_assoc($result1);
 					echo $row1['grade_name']; ?>"></td>

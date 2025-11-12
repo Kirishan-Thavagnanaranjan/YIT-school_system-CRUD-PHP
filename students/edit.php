@@ -27,7 +27,7 @@
 		$query = "SELECT * FROM students WHERE id = '$id' ;";
 		$result = mysqli_query($conn, $query);
 		$row = mysqli_fetch_array($result);
-		$query1 = "SELECT * FROM grade;";
+		$query1 = "SELECT * FROM grades;";
 		$result1 = mysqli_query($conn, $query1);
 
 		?>

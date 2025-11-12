@@ -35,7 +35,7 @@ if(!$results){
 				<td><?php echo $subject['subject_name']; ?></td>
 				<td><?php echo $subject['subject_index']; ?></td>
 				<td><?php echo $subject['subject_order']; ?></td>
-				<td><?php echo $subject['subject_color']; ?></td>
+				<td><input type="color" value="<?php echo $subject['subject_color']; ?>"></td>
 				<td><?php echo $subject['subject_number']; ?></td>
 				<td><button><a href="edit.php?id=<?php echo $subject['id']?>" >Edit </a></button>
 					<button><a href="delete.php?id=<?php echo $subject['id']?>" onclick ="return confirm('Are you sure !')">Delete </a></button>
