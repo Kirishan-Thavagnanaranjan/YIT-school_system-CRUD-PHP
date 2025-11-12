@@ -1,6 +1,6 @@
 <?php
-require_once(__DIR__ . "/../config.php");
-require_once("../auth/usercheck.php");
+require_once("config.php");
+require_once("auth/usercheck.php");
 
 $query = "SELECT * FROM students ;";
 $results = mysqli_query($conn, $query);

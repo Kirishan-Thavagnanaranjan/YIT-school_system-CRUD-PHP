@@ -1,11 +1,5 @@
-<DOCTYPE html>
-<html>
-<head>
-<title>Add Grade</title>
-<link rel="stylesheet" href="../style.css">
-</head>
-<body>
-<form action="store.php" method = "POST" autocomplete = "on">
+
+<form action="?section=grades&page=store" method = "POST" autocomplete = "on">
 <table border="1" cellpadding = "10" cellspacing = "0">
 	<tr>
 		<th colspan = "2"> Grade Registration </th> 
@@ -24,12 +18,11 @@
 	</tr>
 	<tr>
 		<td><label for="grade_order">Grade order</label></td>
-		<td><input type="number" name="grade_order" id="grade_order" ></td>
+		<td><input type="number" name="grade_order" id="grade_order" step="0.1"></td>
 	</tr>
 </table> </br>
 <input type="reset" id="res" value="Reset"> <input type="submit" id="sub" value="Add">
 	
 
 </form>
-</body>
-</html>
+

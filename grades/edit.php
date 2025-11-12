@@ -1,19 +1,12 @@
-<DOCTYPE html>
-<html>
-<head>
-<title>Edit Grades</title>
-<link rel="stylesheet" href="../style.css">
-</head>
-<body>
+
 <?php 
 	$id = $_GET['id'];
-	require_once("../config.php");
 	
 	$query = "SELECT * FROM grades WHERE id = '$id' ;";
 	$result = mysqli_query($conn,$query);
 	$row = mysqli_fetch_array($result);
 ?>
-<form action="update.php" method = "POST" autocomplete = "on">
+<form action="?section=grades&page=update" method = "POST" autocomplete = "on">
 <table border="1" cellpadding = "10" cellspacing = "0">
 	<tr>
 		<th colspan = "2"> Edit Grade details  </th> 
@@ -33,12 +26,10 @@
 	</tr>
 	<tr>
 		<td><label for="grade_order">Grade order</label></td>
-		<td><input type="number" name="grade_order" id="grade_order" value="<?php echo $row['grade_order'] ?>"></td>
+		<td><input type="number" name="grade_order" id="grade_order" step="0.1" value="<?php echo $row['grade_order'] ?>"></td>
 	</tr>
 </table> </br>
 <input type="reset" value="Reset"> <input type="submit" value="Save">
 	
 
 </form>
-</body>
-</html>

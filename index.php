@@ -10,7 +10,8 @@
 
 <body>
     <?php
-    require_once("./auth/usercheck.php");
+    require_once("auth/usercheck.php");
+    require_once("config.php");
     ?>
 
     <!-- Header -->
@@ -24,16 +25,37 @@
         <!-- Sidebar -->
         <aside class="sidebar">
             <ul>
-                <li><a href="students/index.php" target="iframe_a"> Students</a></li>
-                <li><a href="subjects/index.php" target="iframe_a"> Subjects</a></li>
-                <li><a href="grades/index.php" target="iframe_a"> Grades</a></li>
+                <li><a href="index.php?section=students&page=index"> Students</a></li>
+                <li><a href="index.php?section=subjects&page=index"> Subjects</a></li>
+                <li><a href="index.php?section=grades&page=index"> Grades</a></li>
+                <li><a href="auth/logout.php">Logout</a></li>
             </ul>
         </aside>
 
         <!-- Main content area -->
         <main class="content">
-            <a href="./auth/logout.php">Logout<button></button></a>
-            <iframe src="students/index.php" name="iframe_a" height="500px" width="120%" title="Iframe Example"></iframe>
+            <?php
+            
+            if (isset($_GET["page"])) {
+                $page = $_GET["page"];
+            } else {
+                $page = "index";
+            }
+            if (isset($_GET["section"])) {
+                $section = $_GET["section"];
+            } else {
+                $section = "students";
+            }
+
+            $path = $section . "/" . $page . ".php";
+            if (file_exists($path)) {
+                include $path;
+            } else {
+                echo "404 Page not found!";
+            }
+            ?>
+
+
         </main>
     </div>
 

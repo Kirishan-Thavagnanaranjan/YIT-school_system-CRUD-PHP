@@ -4,7 +4,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	$subjects_id = $_POST['subjects_id'];
 
 
-	require_once('../config.php');
+
 	foreach ($subjects_id as $subject_id) {
 		$query = "INSERT INTO grade_subject(grade_id,subject_id) VALUES ('$grade_id','$subject_id')";
 		$results = mysqli_query($conn, $query);
@@ -15,5 +15,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 			echo "query excuted";
 		}
 	}
-	header("Location: ../grades/addsubject.php?id=$grade_id");
+	header("Location: ?section=grades&page=addsubject&id=$grade_id");
 }
