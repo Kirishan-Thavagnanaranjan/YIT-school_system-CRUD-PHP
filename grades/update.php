@@ -7,7 +7,7 @@ if($_SERVER ["REQUEST_METHOD"] == "POST" ){
 	$grade_order = $_POST['grade_order'];
 
 	
-	require_once('config.php');
+	require_once('../config.php');
 	$query = "UPDATE grades SET grade_name = '$grade_name' ,grade_group = '$grade_group',grade_color = '$grade_color',grade_order = '$grade_order' WHERE id ='$id'; ";
 	$results = mysqli_query($conn,$query);
 	
@@ -17,7 +17,7 @@ if($_SERVER ["REQUEST_METHOD"] == "POST" ){
 	else{
 		echo "query excuted";
 	}
-	header("Location: ?section=grades&page=index");
+	header("Location: ../index.php?section=grades&page=index");
 }
 
 ?>

@@ -2,6 +2,7 @@
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	$grade_id = $_POST['id'];
 	$subjects_id = $_POST['subjects_id'];
+	require_once('../config.php');
 
 
 
@@ -15,5 +16,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 			echo "query excuted";
 		}
 	}
-	header("Location: ?section=grades&page=addsubject&id=$grade_id");
+	header("Location: ../?section=grades&page=addsubject&id=$grade_id");
 }

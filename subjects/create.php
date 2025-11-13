@@ -1,11 +1,5 @@
-<DOCTYPE html>
-<html>
-<head>
-<title>Add Subject</title>
-<link rel="stylesheet" href="../style.css">
-</head>
-<body>
-<form action="store.php" method = "POST" autocomplete = "on">
+
+<form action="?section=subjects&page=store" method = "POST" autocomplete = "on">
 <table border="1" cellpadding = "10" cellspacing = "0">
 	<tr>
 		<th colspan = "2"> Subject Registration </th> 
@@ -20,7 +14,7 @@
 	</tr>
 	<tr>
 		<td><label for="subject_order">Subject Order</label></td>
-		<td><input type="number" name="subject_order" id="subject_order" placeholder = "(1,2,3,..)" required></td>
+		<td><input type="number" name="subject_order" id="subject_order" step="0.1" placeholder = "(1,2,3,..)" required></td>
 	</tr>
 	<tr>
 		<td><label for="subject_color">Subject Color</label></td>
@@ -35,5 +29,4 @@
 	
 
 </form>
-</body>
-</html>
+

@@ -1,19 +1,12 @@
-<DOCTYPE html>
-<html>
-<head>
-<title>Edit Subjects</title>
-<link rel="stylesheet" href="../style.css">
-</head>
-<body>
+
 <?php 
 	$id = $_GET['id'];
-	require_once("../config.php");
-	
+
 	$query = "SELECT * FROM subjects WHERE id = '$id' ;";
 	$result = mysqli_query($conn,$query);
 	$row = mysqli_fetch_array($result);
 ?>
-<form action="update.php" method = "POST" autocomplete = "on">
+<form action="?section=subjects&page=update" method = "POST" autocomplete = "on">
 <table border="1" cellpadding = "10" cellspacing = "0">
 	<tr>
 		<th colspan = "2"> Edit Subject details  </th> 
@@ -29,7 +22,7 @@
 	</tr>
 	<tr>
 		<td><label for="subject_order">Subject Order</label></td>
-		<td><input type="number" name="subject_order" id="subject_order" value = "<?php echo $row['subject_order'] ?>"></td>
+		<td><input type="number" name="subject_order" id="subject_order" step="0.1" value = "<?php echo $row['subject_order'] ?>"></td>
 	</tr>
 	<tr>
 		<td><label for="subject_color">Subject Color</label></td>
@@ -44,5 +37,4 @@
 	
 
 </form>
-</body>
-</html>
+

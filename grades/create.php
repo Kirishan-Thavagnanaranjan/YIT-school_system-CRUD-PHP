@@ -1,5 +1,5 @@
 
-<form action="?section=grades&page=store" method = "POST" autocomplete = "on">
+<form action="grades/store.php" method = "POST" autocomplete = "on">
 <table border="1" cellpadding = "10" cellspacing = "0">
 	<tr>
 		<th colspan = "2"> Grade Registration </th> 

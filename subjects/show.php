@@ -1,20 +1,12 @@
 <?php 
 	$id = $_GET['id'];
-	require_once("../config.php");
 	
 	$query = "SELECT * FROM subjects WHERE id = '$id' ;";
 	$result = mysqli_query($conn,$query);
 	$row = mysqli_fetch_array($result);
 ?>
-<DOCTYPE html>
-<html>
-<head>
-<title><?php echo $row['subject_name']?>'s details </title>
-<link rel="stylesheet" href="../style.css">
-</head>
-<body>
 
-<form action="index.php" method = "POST" autocomplete = "on">
+<form action="?section=subjects&page=index" method = "POST" autocomplete = "on">
 <table border="1" cellpadding = "10" cellspacing = "0">
 	<tr>
 		<th colspan = "2"> <?php echo $row['subject_name']?>'s details  </th> 
@@ -41,9 +33,8 @@
 		<td><input type="number" name="subject_number" id="subject_number" value = "<?php echo $row['subject_number'] ?>"></td>
 	</tr>
 </table> </br>
-<a href = "index.php"><button type="button">Back</button></a>
+<a href = "?section=subjects&page=index"><button type="button">Back</button></a>
 	
 
 </form>
-</body>
-</html>
+

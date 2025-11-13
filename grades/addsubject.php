@@ -28,7 +28,7 @@ while ($row3 = mysqli_fetch_array($result3)) {
 ?>
 <title><?php echo $row['grade_name'] ?>'s details</title>
 
-<form action="?section=grade_subject&page=store" method="POST" autocomplete="on">
+<form action="grade_subject/store.php" method="POST" autocomplete="on">
     <table border="1" cellpadding="10" cellspacing="0">
         <tr>
             <th colspan="2"> <?php echo $row['grade_name'] ?>'s details </th>
@@ -58,8 +58,9 @@ while ($row3 = mysqli_fetch_array($result3)) {
                     $selected_subjects = [];
                     foreach ($subjects as $subject) {
                         if (in_array($subject['id'], $result3_arr)) {
-                            echo $subject['subject_name'] . "<br>";
-                        }
+                            echo $subject['subject_name']; ?>
+                            <button><a href="grade_subject/delete.php?id=<?php echo $id ?>&sub_id=<?php echo $subject['id'] ?>">Delete</a></button><br />
+                <?php  }
                     }
                 } else {
                     echo "No subjects assigned yet.";

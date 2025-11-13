@@ -28,7 +28,7 @@ if (!$results) {
 			<td><input type="color" value="<?php echo $grade['grade_color']; ?>"></td>
 			<td><?php echo $grade['grade_order']; ?></td>
 			<td><button><a href="?section=grades&page=edit&id=<?php echo $grade['id'] ?>">Edit </a></button>
-				<button><a href="?section=grades&page=delete&id=<?php echo $grade['id'] ?>" onclick="return confirm('Are you sure !')">Delete </a></button>
+				<button><a href="grades/delete.php?id=<?php echo $grade['id'] ?>" onclick="return confirm('Are you sure !')">Delete </a></button>
 				<button><a href="?section=grades&page=show&id=<?php echo $grade['id'] ?>">Show </a></button>
 				<button><a href="?section=grades&page=addsubject&id=<?php echo $grade['id'] ?>">Add Subject </a></button>
 			</td>

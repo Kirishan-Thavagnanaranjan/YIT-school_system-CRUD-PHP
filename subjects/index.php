@@ -1,6 +1,4 @@
 <?php
-require_once("config.php");
-require_once("auth/usercheck.php");
 
 $query = "SELECT * FROM subjects ;";
 $results = mysqli_query($conn,$query);
@@ -8,15 +6,6 @@ if(!$results){
 	echo mysqli_error($conn);
 }
 ?>
-
-<DOCTYPE html>
-<html>
-<head>
-<title>Subjects</title>
-<!-- <link rel="stylesheet" href="../style.css"> -->
-</head>
-<body>
-	
 <h2>Subjects</h2>
 	<table border="1" cellpadding = "10" cellspacing = "0">
 			<tr>
@@ -37,14 +26,13 @@ if(!$results){
 				<td><?php echo $subject['subject_order']; ?></td>
 				<td><input type="color" value="<?php echo $subject['subject_color']; ?>"></td>
 				<td><?php echo $subject['subject_number']; ?></td>
-				<td><button><a href="edit.php?id=<?php echo $subject['id']?>" >Edit </a></button>
-					<button><a href="delete.php?id=<?php echo $subject['id']?>" onclick ="return confirm('Are you sure !')">Delete </a></button>
-					<button><a href="show.php?id=<?php echo $subject['id']?>" >Show </a></button>
+				<td><button><a href="?section=subjects&page=edit&id=<?php echo $subject['id']?>" >Edit </a></button>
+					<button><a href="?section=subjects&page=delete&id=<?php echo $subject['id']?>" onclick ="return confirm('Are you sure !')">Delete </a></button>
+					<button><a href="?section=subjects&page=show&id=<?php echo $subject['id']?>" >Show </a></button>
 					</td>
 			</tr>
 		<?php } ?>
 	</table></br>
-	<button id="add"><a href="create.php">Add Subject</a></button>
-</body>
-</html>
+	<button id="add"><a href="?section=subjects&page=create">Add Subject</a></button>
+
 
