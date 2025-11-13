@@ -1,5 +1,5 @@
 
-<form action="?section=subjects&page=store" method = "POST" autocomplete = "on">
+<form action="subjects/store.php" method = "POST" autocomplete = "on">
 <table border="1" cellpadding = "10" cellspacing = "0">
 	<tr>
 		<th colspan = "2"> Subject Registration </th> 
@@ -9,7 +9,7 @@
 		<td><input type="text" name="subject_name" id="subject_name" placeholder = "Enter the subject name.." required></td>
 	</tr>
 	<tr>
-		<td><label for="subject_index">Student Index</label></td>
+		<td><label for="subject_index">Subject Index</label></td>
 		<td><input type="text" name="subject_index" id="subject_index" placeholder = "Enter the subject index.." required></td>
 	</tr>
 	<tr>

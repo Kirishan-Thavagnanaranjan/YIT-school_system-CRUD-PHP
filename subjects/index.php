@@ -27,7 +27,7 @@ if(!$results){
 				<td><input type="color" value="<?php echo $subject['subject_color']; ?>"></td>
 				<td><?php echo $subject['subject_number']; ?></td>
 				<td><button><a href="?section=subjects&page=edit&id=<?php echo $subject['id']?>" >Edit </a></button>
-					<button><a href="?section=subjects&page=delete&id=<?php echo $subject['id']?>" onclick ="return confirm('Are you sure !')">Delete </a></button>
+					<button><a href="subjects/delete.php?id=<?php echo $subject['id']?>" onclick ="return confirm('Are you sure !')">Delete </a></button>
 					<button><a href="?section=subjects&page=show&id=<?php echo $subject['id']?>" >Show </a></button>
 					</td>
 			</tr>
