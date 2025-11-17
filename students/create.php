@@ -1,17 +1,6 @@
-<!DOCTYPE html>
-<html>
 
-<head>
-	<title>Add Student</title>
-	<link rel="stylesheet" href="../style.css">
-	<style>
-
-	</style>
-</head>
-
-<body>
 	<?php
-	require_once("../config.php");
+
 	$query = "SELECT * FROM grades ;";
 	$results = mysqli_query($conn, $query);
 	if (!$results) {
@@ -19,7 +8,7 @@
 	}
 	?>
 
-	<form action="../students/store.php" method="POST" autocomplete="on" enctype="multipart/form-data">
+	<form action="students/store.php" method="POST" autocomplete="on" enctype="multipart/form-data">
 		<table border="1" cellpadding="10" cellspacing="0">
 			<tr>
 				<th colspan="2"> Student Registration </th>
@@ -80,6 +69,3 @@
 
 
 	</form>
-</body>
-
-</html>

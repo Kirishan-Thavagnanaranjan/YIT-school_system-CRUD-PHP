@@ -1,7 +1,5 @@
 <?php
 $id = $_GET['id'];
-require_once("../config.php");
-require_once "../auth/usercheck.php";
 // Fetch student details
 $query = "SELECT * FROM students WHERE id = '$id';";
 $result = mysqli_query($conn, $query);
@@ -37,17 +35,9 @@ while ($row4 = mysqli_fetch_assoc($result4)) {
     $selected_subjects[] = $row4['subject_id'];
 }
 ?>
-<!DOCTYPE html>
-<html>
 
-<head>
-    <title><?php echo $row['student_name'] ?>'s details</title>
-    <link rel="stylesheet" href="../style.css">
-</head>
 
-<body>
-
-    <form action="../student_subject/store.php" method="POST">
+    <form action="student_subject/store.php" method="POST">
         <table border="1" cellpadding="10" cellspacing="0">
             <tr>
                 <th colspan="2"><?php echo $row['student_name'] ?>'s details</th>
@@ -81,7 +71,7 @@ while ($row4 = mysqli_fetch_assoc($result4)) {
                         <td>
                             <?php if (in_array($subject['id'], $result3_arr)) { ?>
                                 <?php echo $subject['subject_name']; ?></td>
-                            <td><button><a href="../student_subject/delete.php?id=<?php echo $id ?>&sub_id=<?php echo $subject['id']?>">Delete</a></button></td>
+                            <td><button><a href="student_subject/delete.php?id=<?php echo $id ?>&sub_id=<?php echo $subject['id']?>">Delete</a></button></td>
                             <?php  } ?>
                        
                         </tr>
@@ -117,6 +107,3 @@ while ($row4 = mysqli_fetch_assoc($result4)) {
         <a href="index.php"><button type="button">Back</button></a>
         <input type="submit" value="Save">
     </form>
-</body>
-
-</html>

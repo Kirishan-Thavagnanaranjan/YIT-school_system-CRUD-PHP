@@ -11,6 +11,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	$gender = $_POST['gender'];
 	$telephone_number = $_POST['telephone_number'];
 	$address = $_POST['address'];
+	$path = $_POST['path'];
 
 	require_once('../config.php');
 	if (!empty($_FILES['myfile']['name'])) {
@@ -29,6 +30,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 			if ($size < 10000000) {
 
 				if (move_uploaded_file($file["tmp_name"], $target_file)) {
+					if(file_exists($path)){
+						unlink($path);
+					}
 					$query1 = "UPDATE students SET image ='$target_file',file_name='$original_file_name' WHERE id ='$id'; ";
 					$results1 = mysqli_query($conn, $query1);
 
@@ -50,6 +54,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	if (!$results) {
 		echo mysqli_error($conn);
 	}
-	header("Location: index.php");
+	header("Location: ../?section=students&page=index");
 	exit;
 }

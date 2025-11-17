@@ -22,5 +22,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 		}
 	}
 	}
-	header("Location: ../students/addsubject.php?id=$student_id");
+	header("Location: ../?section=students&page=addsubject&id=$student_id");
 }
