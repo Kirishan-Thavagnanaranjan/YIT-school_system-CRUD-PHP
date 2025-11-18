@@ -1,4 +1,7 @@
 <?php
+if (!defined('SECURE_ACCESS')) {
+	die("Access Denied!");
+}
 $id = $_GET['id'];
 
 $query = "SELECT * FROM students WHERE id = '$id' ;";
@@ -7,7 +10,7 @@ $row = mysqli_fetch_array($result);
 ?>
 <form action="index.php" method="POST">
 
-	<img src="<?php echo substr($row['image'],3) ?>" alt="<?php echo $row['file_name'] ?> " style="width: 100px;">
+	<img src="<?php echo substr($row['image'], 3) ?>" alt="<?php echo $row['file_name'] ?> " style="width: 100px;">
 	<table border="1" cellpadding="10" cellspacing="0">
 		<tr>
 			<th colspan="2"> <?php echo $row['student_name'] ?>'s details </th>

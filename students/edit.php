@@ -1,4 +1,7 @@
 <?php
+if (!defined('SECURE_ACCESS')) {
+	die("Access Denied!");
+}
 $id = $_GET['id'];
 
 
@@ -10,7 +13,7 @@ $result1 = mysqli_query($conn, $query1);
 
 ?>
 <form action="students/update.php" method="POST" enctype="multipart/form-data">
-	<img src="<?php echo substr($row['image'],3) ?>" alt="<?php echo $row['file_name'] ?>" style="width:100px;"><br />
+	<img src="<?php echo substr($row['image'], 3) ?>" alt="<?php echo $row['file_name'] ?>" style="width:100px;"><br />
 	<button><a href="students/delete_image.php?id=<?php echo $row['id'] ?>&path=<?php echo $row['image'] ?>">Delete Image</a></button>
 	<input type="file" name="myfile" id="myfile" accept="image/jpg">
 	<table border="1" cellpadding="10" cellspacing="0">
@@ -22,7 +25,7 @@ $result1 = mysqli_query($conn, $query1);
 			<td><label for="father_name">Father Name</label></td>
 			<td><input type="text" name="father_name" id="father_name" value="<?php echo $row['father_name'] ?>">
 				<input type="hidden" name="id" id="id" value="<?php echo $row['id'] ?>">
-				<input type="hidden" name="path" value="<?php echo $row['image'];?>">
+				<input type="hidden" name="path" value="<?php echo $row['image']; ?>">
 			</td>
 		</tr>
 		<tr>

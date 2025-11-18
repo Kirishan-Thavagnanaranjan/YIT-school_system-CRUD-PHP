@@ -1,4 +1,7 @@
 <?php
+if (!defined('SECURE_ACCESS')) {
+	die("Access Denied!");
+}
 $id = $_GET['id'];
 
 

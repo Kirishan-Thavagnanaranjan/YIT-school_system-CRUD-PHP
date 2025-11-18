@@ -1,4 +1,7 @@
 <?php
+if (!defined('SECURE_ACCESS')) {
+	die("Access Denied!");
+}
 
 $query = "SELECT * FROM grades ;";
 $results = mysqli_query($conn, $query);

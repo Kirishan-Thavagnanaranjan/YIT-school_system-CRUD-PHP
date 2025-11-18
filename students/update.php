@@ -1,6 +1,6 @@
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-	
+
 	$id = $_POST['id'];
 	$father_name = $_POST['father_name'];
 	$student_name  = $_POST['student_name'];
@@ -15,7 +15,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 	require_once('../config.php');
 	if (!empty($_FILES['myfile']['name'])) {
-        $file = $_FILES['myfile'];
+		$file = $_FILES['myfile'];
 		$target_dir = "../uploads/";
 		$target_file = $target_dir . basename($file['name']);
 		$original_file_name = basename($file['name']);
@@ -30,7 +30,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 			if ($size < 10000000) {
 
 				if (move_uploaded_file($file["tmp_name"], $target_file)) {
-					if(file_exists($path)){
+					if (file_exists($path)) {
 						unlink($path);
 					}
 					$query1 = "UPDATE students SET image ='$target_file',file_name='$original_file_name' WHERE id ='$id'; ";

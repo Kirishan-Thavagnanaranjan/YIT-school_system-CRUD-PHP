@@ -1,6 +1,9 @@
 <?php
+if (!defined('SECURE_ACCESS')) {
+	die("Access Denied!");
+}
 
-$query = "SELECT * FROM students ;";
+$query = "SELECT * FROM students WHERE deleted_at IS NULL ;";
 $results = mysqli_query($conn, $query);
 if (!$results) {
 	echo mysqli_error($conn);
@@ -31,7 +34,7 @@ if (!$results) {
 		?>
 			<tr>
 				<td><?php echo $student['id']; ?></td>
-				<td><img src="<?php echo substr($student['image'],3) ?>" alt="<?php $student['file_name'] ?>"
+				<td><img src="<?php echo substr($student['image'], 3) ?>" alt="<?php $student['file_name'] ?>"
 						style="vertical-align: middle;
 				width: 50px;
 				height: 50px;

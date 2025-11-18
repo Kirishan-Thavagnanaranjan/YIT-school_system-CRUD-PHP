@@ -1,4 +1,5 @@
 <?php
+
 require_once('../config.php');
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	$grade_name = $_POST['grade_name'];
@@ -21,32 +22,29 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 			alert("Grade name and grade order are all ready exits..!");
 			window.history.back();
 		</script>
-<?php
-	}
-	else if(in_array($grade_name,$fetch_grade_names)){
-		?>
+	<?php
+	} else if (in_array($grade_name, $fetch_grade_names)) {
+	?>
 		<script>
 			alert("Grade name already exits..!");
 			window.history.back();
 		</script>
-		<?php
-	}
-	else if (in_array($grade_order,$fetch_grade_order)){
-		?>
+	<?php
+	} else if (in_array($grade_order, $fetch_grade_order)) {
+	?>
 		<script>
 			alert("Grade order is already exits..!")
 			window.history.back();
 		</script>
-		<?php
-	}
-	else{
+<?php
+	} else {
 
-	$query = "INSERT INTO grades(grade_name,grade_group,grade_color,grade_order) VALUES('$grade_name','$grade_group','$grade_color','$grade_order');";
-	$results = mysqli_query($conn, $query);
+		$query = "INSERT INTO grades(grade_name,grade_group,grade_color,grade_order) VALUES('$grade_name','$grade_group','$grade_color','$grade_order');";
+		$results = mysqli_query($conn, $query);
 
-	if (!$results) {
-		echo mysqli_error($conn);
+		if (!$results) {
+			echo mysqli_error($conn);
+		}
+		header("Location: ../?section=grades&page=index");
 	}
-	header("Location: ../?section=grades&page=index");
-}
 }

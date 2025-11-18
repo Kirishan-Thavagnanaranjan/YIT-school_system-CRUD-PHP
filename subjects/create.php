@@ -1,4 +1,6 @@
-
+<?php if (!defined('SECURE_ACCESS')) {
+    die("Access Denied!");
+} ?>
 <form action="subjects/store.php" method = "POST" autocomplete = "on">
 <table border="1" cellpadding = "10" cellspacing = "0">
 	<tr>

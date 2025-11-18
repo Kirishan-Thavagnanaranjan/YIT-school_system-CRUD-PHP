@@ -1,38 +1,40 @@
 <?php
+if (!defined('SECURE_ACCESS')) {
+	die("Access Denied!");
+}
 
 $query = "SELECT * FROM subjects ;";
-$results = mysqli_query($conn,$query);
-if(!$results){
+$results = mysqli_query($conn, $query);
+if (!$results) {
 	echo mysqli_error($conn);
 }
 ?>
 <h2>Subjects</h2>
-	<table border="1" cellpadding = "10" cellspacing = "0">
-			<tr>
-				<td>Id</td>
-				<td>Subject Name</td>
-				<td>Subject Index</td>
-				<td>Subject order </td>
-				<td>Subject Color</td>
-				<td>Subject Number</td>
-				<td>Actions</td>
-			</tr>
-		<?php foreach($results as $subject){ 
-				//while($row = mysqli_fetch_assoc($results) ?>
-			<tr>
-				<td><?php echo $subject['id']; ?></td>
-				<td><?php echo $subject['subject_name']; ?></td>
-				<td><?php echo $subject['subject_index']; ?></td>
-				<td><?php echo $subject['subject_order']; ?></td>
-				<td><input type="color" value="<?php echo $subject['subject_color']; ?>"></td>
-				<td><?php echo $subject['subject_number']; ?></td>
-				<td><button><a href="?section=subjects&page=edit&id=<?php echo $subject['id']?>" >Edit </a></button>
-					<button><a href="subjects/delete.php?id=<?php echo $subject['id']?>" onclick ="return confirm('Are you sure !')">Delete </a></button>
-					<button><a href="?section=subjects&page=show&id=<?php echo $subject['id']?>" >Show </a></button>
-					</td>
-			</tr>
-		<?php } ?>
-	</table></br>
-	<button id="add"><a href="?section=subjects&page=create">Add Subject</a></button>
-
-
+<table border="1" cellpadding="10" cellspacing="0">
+	<tr>
+		<td>Id</td>
+		<td>Subject Name</td>
+		<td>Subject Index</td>
+		<td>Subject order </td>
+		<td>Subject Color</td>
+		<td>Subject Number</td>
+		<td>Actions</td>
+	</tr>
+	<?php foreach ($results as $subject) {
+		//while($row = mysqli_fetch_assoc($results) 
+	?>
+		<tr>
+			<td><?php echo $subject['id']; ?></td>
+			<td><?php echo $subject['subject_name']; ?></td>
+			<td><?php echo $subject['subject_index']; ?></td>
+			<td><?php echo $subject['subject_order']; ?></td>
+			<td><input type="color" value="<?php echo $subject['subject_color']; ?>"></td>
+			<td><?php echo $subject['subject_number']; ?></td>
+			<td><button><a href="?section=subjects&page=edit&id=<?php echo $subject['id'] ?>">Edit </a></button>
+				<button><a href="subjects/delete.php?id=<?php echo $subject['id'] ?>" onclick="return confirm('Are you sure !')">Delete </a></button>
+				<button><a href="?section=subjects&page=show&id=<?php echo $subject['id'] ?>">Show </a></button>
+			</td>
+		</tr>
+	<?php } ?>
+</table></br>
+<button id="add"><a href="?section=subjects&page=create">Add Subject</a></button>

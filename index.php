@@ -11,6 +11,7 @@
 <body>
     <?php
     require_once("auth/usercheck.php");
+    define("SECURE_ACCESS", true);
     require_once("config.php");
     ?>
 

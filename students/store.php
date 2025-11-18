@@ -12,7 +12,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 	require_once '../config.php';
 	if (!empty($_FILES['myfile']['name'])) {
-        $file = $_FILES['myfile'];
+		$file = $_FILES['myfile'];
 		$target_dir = "../uploads/";
 		$target_file = $target_dir . basename($file['name']);
 		$original_file_name = basename($file['name']);
