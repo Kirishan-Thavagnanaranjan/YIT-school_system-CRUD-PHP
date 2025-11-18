@@ -49,6 +49,39 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 			echo " Upload profile Only allowed file types";
 		}
 	}
+
+	//get exiting students details and check validation
+
+	$fetch_query = "SELECT admission_number,nic FROM students WHERE id != $id;";
+	$fetch_results = mysqli_query($conn, $fetch_query);
+	$fetch_addmission_number = [];
+	$fetch_nic = [];
+	while ($row = mysqli_fetch_assoc($fetch_results)) {
+		$fetch_addmission_number[] = $row["admission_number"];
+		$fetch_nic[] = $row["nic"];
+	}
+
+	if (in_array($admission_number, $fetch_addmission_number) && in_array($nic, $fetch_nic)) { ?>
+		<script>
+			alert("Admission number and NIC are already exited!");
+			window.history.back();
+		</script>
+	<?php
+	} else if (in_array($admission_number, $fetch_addmission_number)) { ?>
+		<script>
+			alert("Addmission number is already exited!");
+			window.history.back();
+		</script>
+	<?php
+	} else if (in_array($nic, $fetch_nic)) { ?>
+		<script>
+			alert("NIC number is already exited!");
+			window.history.back();
+		</script>
+<?php
+	}
+	else{
+
 	$query = "UPDATE students SET father_name = '$father_name' ,student_name = '$student_name',admission_number = '$admission_number',grade_id = '$grade_id',nic = '$nic',dob='$dob',gender='$gender',telephone_number='$telephone_number',address='$address' WHERE id ='$id'; ";
 	$results = mysqli_query($conn, $query);
 	if (!$results) {
@@ -56,4 +89,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	}
 	header("Location: ../?section=students&page=index");
 	exit;
+}
 }

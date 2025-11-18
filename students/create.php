@@ -8,6 +8,8 @@ $results = mysqli_query($conn, $query);
 if (!$results) {
 	echo mysqli_error($conn);
 }
+
+
 ?>
 
 <form action="students/store.php" method="POST" autocomplete="on" enctype="multipart/form-data">
