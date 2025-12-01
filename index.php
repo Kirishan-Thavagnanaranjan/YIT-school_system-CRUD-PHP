@@ -6,6 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>School System</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.datatables.net/2.3.5/css/dataTables.dataTables.css" />
+
 </head>
 
 <body>
@@ -36,7 +40,7 @@
         <!-- Main content area -->
         <main class="content">
             <?php
-            
+
             if (isset($_GET["page"])) {
                 $page = $_GET["page"];
             } else {
@@ -64,6 +68,8 @@
     <footer>
         <p>© <?php echo date('Y'); ?> School Management System | Designed by Kirishan</p>
     </footer>
+    <script src="//cdn.datatables.net/2.3.5/js/dataTables.min.js"></script>
+
 
 </body>
 

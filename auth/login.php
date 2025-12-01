@@ -57,7 +57,7 @@
                         </div>
                         <div class="system">School system</div>
                         <h5 class="mb-5">Sign in your account</h5>
-                        <form action="islogin.php" method="post"></form>
+                        <form action="islogin.php" method="post">
                         <div class="mt-5">
                             <label for="user_name" class="form-label">User Name</label>
                             <input type="text" class="form-control my-3 py-2" name="user_name" id="user_name">
